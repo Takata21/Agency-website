@@ -1,0 +1,131 @@
+---
+---
+
+<header>
+  <nav>
+    <a href="/" class="logo">FALLIN</a>
+    <ul class="desk-menu">
+      <li><a href="">Design</a></li>
+      <li><a href="">Development</a></li>
+      <li><a href="">Production</a></li>
+      <li><a href="">Photography</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
+    <svg
+      class="hamburger-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon icon-tabler icon-tabler-menu-2"
+      width="44"
+      height="44"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="#fff"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <line x1="4" y1="6" x2="20" y2="6"></line>
+      <line x1="4" y1="12" x2="20" y2="12"></line>
+      <line x1="4" y1="18" x2="20" y2="18"></line>
+    </svg>
+    <ul class="movil-menu">
+      <li><a href="">Home</a></li>
+      <li><a href="">Design</a></li>
+      <li><a href="">Development</a></li>
+      <li><a href="">Production</a></li>
+      <li><a href="">Photography</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  /*----------------header styles-----------------*/
+  header {
+    background: #000;
+    color: white;
+    padding: 0 20px;
+  }
+  nav {
+    position: relative;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+  }
+  .logo {
+    text-transfrom: uppercase;
+    font-size: 18px;
+  }
+  .hamburger-icon {
+    position: relative;
+    z-index: 999;
+    cursor: pointer;
+  }
+  .desk-menu {
+    display: none;
+  }
+  .movil-menu {
+    position: fixed;
+    display: flex;
+    width: 50vw;
+    height: calc(100vh -50px);
+    align-items: center;
+    justify-content: space-around;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 50px;
+    transform: translateX(100vw);
+    transition: transform ease-in-out 0.5s;
+    background: #000;
+    flex-direction: column;
+  }
+  .movil-menu.visible {
+    transform: translateX(0);
+  }
+  .movil-menu li {
+    width: 100%;
+  }
+  .movil-menu li a {
+    display: block;
+    width: 100%;
+    padding: 25px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  @media screen and (min-width: 480px) {
+    header {
+      padding: 0 100px;
+    }
+    .hamburger-icon {
+      display: none;
+    }
+    .desk-menu {
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+    }
+    .desk-menu li a {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: #d3d3d3;
+    }
+  }
+</style>
+
+<script>
+  const MenuBtn = document.querySelector('.hamburger-icon')
+  const movilMenu = document.querySelector('.movil-menu')
+
+  MenuBtn.addEventListener('click', () => {
+    movilMenu.classList.toggle('visible')
+  })
+</script>
