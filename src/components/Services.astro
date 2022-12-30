@@ -1,0 +1,31 @@
+---
+import ServiceCard from './ServiceCard.astro'
+import data from '../../data.js'
+---
+
+<div class="services-container">
+  <h2 class="services-qtitle">what we can do?</h2>
+  <h2 class="services-title">Services we can help you with</h2>
+  <div class="cards-container">
+    {data.map((item) => <ServiceCard data={item} />)}
+  </div>
+</div>
+
+<style>
+  .services-container {
+    padding: 20px;
+  }
+  .services-qtitle {
+    font-size: 30px;
+    text-decoration: underline green;
+  }
+  .services-title {
+    font-size: 50px;
+    color: rgb(2, 71, 2);
+  }
+  .cards-container {
+    display: grid;
+    justify-content: center;
+    gap: 50px;
+  }
+</style>

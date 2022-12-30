@@ -1,0 +1,82 @@
+---
+const {
+  data: { id, title, desc, photo, video },
+} = Astro.props
+---
+
+<article class="card">
+  <h3 class="card-title">{title}</h3>
+  <div class="card-media-container">
+    {
+      video ? (
+        <video class="card-media" src={`/img/${video}`} autoplay />
+      ) : (
+        <img
+          class="card-media"
+          src={`img/${photo}`}
+          alt={`${title} ilustration`}
+        />
+      )
+    }
+  </div>
+  <p class="card-desc">
+    {desc}
+  </p>
+</article>
+
+<style>
+  .card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+    background-color: whitesmoke;
+  }
+  .card-title {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 16px;
+    color: gray;
+    font-weight: 300;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    transition: font-weight 0.1s ease-in;
+    z-index: 99;
+  }
+  .card:hover .card-title {
+    font-weight: 800;
+  }
+  .card-media-container {
+    width: 85%;
+    height: 85%;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+  }
+  .card:hover .card-media-container {
+    transform: scale(1.1);
+  }
+  .card-media {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border-radius: 50%;
+  }
+  .card-desc {
+    position: absolute;
+    width: 70%;
+    padding: 20px;
+    opacity: 0;
+    background-color: rgba(192, 189, 189, 0.582);
+    text-align: center;
+    border-radius: 5px;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .card:hover .card-desc {
+    opacity: 1;
+  }
+</style>
