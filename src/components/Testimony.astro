@@ -1,0 +1,71 @@
+---
+const {
+  info: { logo, avatar, comment, name, title },
+} = Astro.props
+---
+
+<div class="testimony">
+  <img class="testimony-logo" src={`/img/${logo}`} alt={`${logo} logo`} />
+  <p class="testimony-desc">
+    {comment}
+  </p>
+  <div class="testimony-user">
+    <img
+      src={`/img/${avatar}`}
+      alt={`${name} avatar`}
+      class="testimony-avatar"
+    />
+    <div class="testimony-user-info">
+      <p class="testimony-name">james garry</p>
+      <span class="testimony-jobTitle">UI Designer</span>
+    </div>
+  </div>
+</div>
+<style>
+  .testimony {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .testimony-logo {
+    width: 30px;
+  }
+  .testimony-desc {
+    font-size: 20px;
+    font-weght: 300;
+    margin: 20px auto;
+  }
+
+  .testimony-user {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  .testimony-avatar {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .testimony-user-info {
+  }
+  .testimony-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #555;
+    text-transform: capitalize;
+  }
+  .testimony-jobTitle {
+    font-size: 14px;
+  }
+  @media screen and (min-width: 480px) {
+    .testimony {
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+</style>

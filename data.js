@@ -1,4 +1,4 @@
-const data = [
+export const data = [
     {
       id: 1,
       name: "design",
@@ -171,4 +171,4 @@ const data = [
       title: "UI Designer",
     },
   ];
-  export default data
+  

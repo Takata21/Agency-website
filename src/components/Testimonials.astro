@@ -1,0 +1,63 @@
+---
+import Testimony from './Testimony.astro'
+import { users } from '../../data'
+---
+
+<section class="testimonials">
+  <div class="circle"></div>
+  <h2 class="title">Testimonials</h2>
+  <div class="container">
+    {users.map((user) => <Testimony info={user} />)}
+  </div>
+</section>
+<style>
+  .circle {
+    display: none;
+  }
+  .testimonials {
+    margin-top: 50px;
+    padding: 20px;
+    height: auto;
+  }
+  .title {
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+  .container {
+    display: grid;
+  }
+
+  @media screen and (min-width: 480px) {
+    .testimonials {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 100vh;
+      margin: 0 auto;
+    }
+    .circle {
+      position: absolute;
+      display: block;
+      width: 100vh;
+      height: 100vh;
+      left: 0;
+      right: 0;
+      top: -70vh;
+      margin: auto;
+      border-radius: 50%;
+      background-color: darkblue;
+      z-index: -1;
+
+      opacity: 0.1;
+    }
+    .title {
+      text-align: center;
+      font-size: 36px;
+    }
+    .container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
