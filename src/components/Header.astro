@@ -75,6 +75,7 @@
     height: calc(100vh -50px);
     align-items: center;
     justify-content: space-around;
+    flex-direction: column;
     top: 0;
     right: 0;
     bottom: 0;
@@ -82,7 +83,7 @@
     transform: translateX(100vw);
     transition: transform ease-in-out 0.5s;
     background: #000;
-    flex-direction: column;
+    z-index: 99;
   }
   .movil-menu.visible {
     transform: translateX(0);
