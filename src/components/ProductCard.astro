@@ -1,0 +1,65 @@
+---
+import Gallery from './Gallery.astro'
+const { data } = Astro.props
+const { title, longDesc, images } = data
+---
+
+<article class="card">
+  <div class="card-content">
+    <h1 class="card-title">{title}</h1>
+    <p class="card-desc">{longDesc}</p>
+    <button class="btn">contact</button>
+  </div>
+  <Gallery data={[...images]} title={title} />
+</article>
+
+<style>
+  .card {
+    padding: 20px;
+  }
+  .card-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .card-title {
+    font-size: 50px;
+    margin: 33px;
+    text-align: center;
+  }
+  .card-desc {
+    margin: 16px 0;
+  }
+  .btn {
+    width: 100px;
+    padding: 15px;
+    margin: 20px auto;
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    text-transform: capitalize;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    animation: button 1s ease infinite alternate;
+  }
+  @media screen and (min-width: 480px) {
+    .card {
+      display: flex;
+      flex-direction: row-reverse;
+      padding: 120px 50px;
+    }
+    .card-content {
+      flex: 1;
+      text-align: left;
+    }
+    .card-title {
+      margin: 33px 0;
+      font-size: 60px;
+      text-align: left;
+    }
+    .btn {
+      margin: 20px 0;
+      font-size: 20px;
+    }
+  }
+</style>
