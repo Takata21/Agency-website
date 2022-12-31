@@ -1,0 +1,100 @@
+<footer class="container">
+  <div class="footer-head">
+    <h2 class="footer-title"><span>FALLIN</span> CREATIVES.</h2>
+    <a href="" class="footer-link"
+      ><span>Work with us</span> <img src="/img/link.png" alt="link" />
+    </a>
+  </div>
+  <div class="footer-card">
+    <div class="footer-item">
+      <p>45 ADAM STREET, <br /> USA</p>
+    </div>
+    <div class="footer-item">
+      <p>CONTACT@FALLIN.COM <br /> 111_438_5244</p>
+    </div>
+  </div>
+  <div class="footer-card">
+    <div class="footer-item">
+      <p>FOLLOW US: <br /> __FB __IN __BE __TW</p>
+    </div>
+    <div class="footer-item">
+      <p>© 2022 FALLIN INTERACTIVE,<br /> ALL RIGHTS RESERVED</p>
+    </div>
+  </div>
+</footer>
+<style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    border-top: 3px solid black;
+  }
+  .footer-head {
+    width: max-content;
+    flex: 2 1;
+  }
+
+  .footer-title {
+    padding: 5px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+    color: white;
+    background-color: rgba(0, 128, 0, 0.774);
+    transition: color 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out;
+  }
+  .footer-title:hover {
+    color: rgba(0, 128, 0, 0.774);
+    background: transparent;
+  }
+
+  .footer-link {
+    display: block;
+    margin: 30px auto;
+    font-weight: 700;
+    text-transform: uppercase;
+    transform-origin: left;
+    font-size: 30px;
+    transition: transform 1s ease-in-out;
+  }
+  .footer-link span {
+    display: inline-block;
+    border-bottom: 3px solid black;
+  }
+  .footer-link img {
+    display: inline-block;
+    max-width: 100%;
+    width: 40px;
+    height: 40px;
+  }
+  .footer-link:hover {
+    transform: scale(1.1);
+  }
+
+  .footer-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  @media screen and (min-width: 480px) {
+    .container {
+      flex-direction: row;
+      height: 250px;
+      align-items: center;
+    }
+    .footer-title {
+      font-size: 36px;
+      width: max-content;
+    }
+    .footer-link {
+      font-size: 36px;
+    }
+    .footer-card {
+      flex: 1 2;
+      text-align: right;
+    }
+  }
+</style>
