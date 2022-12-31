@@ -1,0 +1,96 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro'
+---
+
+<MainLayout>
+  <div class="contact">
+    <div class="circle"></div>
+    <h1 class="title">Get in Touch</h1>
+    <form action="">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Name" />
+        <input type="text" class="form-control" placeholder="Phone" />
+      </div>
+      <input type="text" class="form-control" placeholder="Email" />
+      <input type="text" class="form-control" placeholder="Subject" />
+      <textarea name="message" rows="6" placeholder="Message"></textarea>
+      <button type="submit" class="btn">SUBMIT</button>
+    </form>
+  </div>
+</MainLayout>
+<style>
+  .circle {
+    position: absolute;
+    display: none;
+    width: 100vh;
+    height: 100vh;
+    border-radius: 50%;
+    background-color: #01c686;
+    z-index: -1;
+    left: -40vh;
+    top: -20vh;
+    opacity: 0.1;
+  }
+  .contact {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .title {
+    flex: 1;
+    margin: 21px 0;
+  }
+  form {
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 10px;
+    flex-direction: column;
+    padding: 50px;
+    height: 500px;
+  }
+  .input-group {
+    display: grid;
+    width: 100%;
+    min-width: 250px;
+    gap: 10px;
+    flex-direction: column;
+  }
+  textarea {
+    padding-left: 10px;
+  }
+  .form-control {
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+  }
+  .btn {
+    width: 100%;
+    height: 35px;
+    padding: 5px 10px;
+    margin-top: 20px;
+    background-color: rgb(0, 82, 0);
+    color: white;
+    font-size: 16px;
+    text-transform: capitalize;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  @media screen and (min-width: 480px) {
+    .circle {
+      display: block;
+    }
+    .title {
+      font-size: 32px;
+    }
+    form {
+      width: 500px;
+    }
+    .input-group {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
